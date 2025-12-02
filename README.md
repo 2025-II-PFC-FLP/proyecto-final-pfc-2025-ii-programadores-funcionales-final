@@ -11,7 +11,7 @@
 | Nombre Completo | Código | Rol            | Correo Electrónico        |
 | --------------- | ------ | -------------- | ------------------------- |
 | [Estudiante 1]  | 123456 | [Líder/Colab.] | [correo1@institucion.edu] |
-| [Estudiante 2]  | 123457 | [Colaborador]  | [correo2@institucion.edu] |
+| scarllys del valle vallecilla caicedo | 2459608 | Colaboradora  | scarllys.vallecilla@correounivalle.edu.co |
 | [Estudiante 3]  | 123458 | [Colaborador]  | [correo3@institucion.edu] |
 
 ---
