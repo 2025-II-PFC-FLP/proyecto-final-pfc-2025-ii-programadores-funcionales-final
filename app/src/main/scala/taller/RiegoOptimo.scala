@@ -120,11 +120,14 @@ class RiegoOptimo {
   def ProgramacionRiegoOptimoV2(f: Finca, d: Distancia): (ProgRiego, Int) = {
     val todasProgramaciones = generarProgramacionesRiego(f)
 
+    def evaluarCosto(pi: ProgRiego): Int =
+      costoRiegoFinca(f, pi) + costoMovilidad(f, pi, d)
+
     def encontrarOptima(progs: Vector[ProgRiego], mejorActual: (ProgRiego, Int)): (ProgRiego, Int) = {
       progs match {
         case Vector() => mejorActual
         case head +: tail =>
-          val costo = costoRiegoFinca(f, head) + costoMovilidad(f, head, d)
+          val costo = evaluarCosto(head)
           val nuevoMejor = if (costo < mejorActual._2) (head, costo) else mejorActual
           encontrarOptima(tail, nuevoMejor)
       }
@@ -133,7 +136,7 @@ class RiegoOptimo {
     if (todasProgramaciones.isEmpty) (Vector(), 0)
     else {
       val primera = todasProgramaciones.head
-      val costoPrimera = costoRiegoFinca(f, primera) + costoMovilidad(f, primera, d)
+      val costoPrimera = evaluarCosto(primera)
       encontrarOptima(todasProgramaciones.tail, (primera, costoPrimera))
     }
   }

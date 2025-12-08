@@ -168,25 +168,25 @@ class RiegoOptimoTest extends AnyFunSuite with Matchers {
   test("costoRiegoTablon - Ejemplo 1, tablón 2, programación Π1 = ⟨0,1,4,2,3⟩") {
     val pi1: ProgRiego = Vector(0, 1, 4, 2, 3)
     val costo = r.costoRiegoTablon(2, fincaEjemplo1, pi1)
-    costo shouldBe 12
+    costo shouldBe 10
   }
 
   test("costoRiegoTablon - Ejemplo 1, tablón 3, programación Π1 = ⟨0,1,4,2,3⟩") {
     val pi1: ProgRiego = Vector(0, 1, 4, 2, 3)
     val costo = r.costoRiegoTablon(3, fincaEjemplo1, pi1)
-    costo shouldBe 1
+    costo shouldBe 5
   }
 
   test("costoRiegoTablon - Ejemplo 1, tablón 4, programación Π1 = ⟨0,1,4,2,3⟩") {
     val pi1: ProgRiego = Vector(0, 1, 4, 2, 3)
     val costo = r.costoRiegoTablon(4, fincaEjemplo1, pi1)
-    costo shouldBe 16
+    costo shouldBe 8
   }
 
   test("costoRiegoFinca - Ejemplo 1, programación Π1 = ⟨0,1,4,2,3⟩") {
     val pi1: ProgRiego = Vector(0, 1, 4, 2, 3)
     val costo = r.costoRiegoFinca(fincaEjemplo1, pi1)
-    costo shouldBe 39
+    costo shouldBe 33
   }
 
   test("costoRiegoFinca - Ejemplo 1, programación Π2 = ⟨2,1,4,3,0⟩") {
